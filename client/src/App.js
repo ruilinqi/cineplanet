@@ -10,6 +10,7 @@ function App() {
       setUsers(res.data.users)
     })
   },[])
+  console.log("users", {users});
   return (
     <div className="App">
       <h2>hello world</h2>
