@@ -25,9 +25,9 @@ export default function MovieListItem(props) {
     <div>
      {movies?<>
     {movies.map((movie => 
-      <li>
+      
         <MovieCard key={movie.id} {...movie}/>      
-      </li>
+      
     ))}
     </>:null}
     </div>
