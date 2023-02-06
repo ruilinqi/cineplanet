@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import {useState, useEffect} from 'react'
 import MovieListItem from './components/MovieListItem';
@@ -54,12 +54,12 @@ function App() {
   </Router> */}
         {/* <h2>{users.map(user => <li key = {user.id}>{user.email}</li>)}</h2> */}
         <Login/>
-        <MovieListItem/>
+      <SliderMovies/>
+      <MovieListItem/>
 
 
       <br/>
       {/* <h2>{users.map(user => <li key = {user.id}>{user.email}</li>)}</h2> */}
-      <SliderMovies/>
       <MovieListItem/>
 
     </div>
