@@ -5,9 +5,14 @@ import { Link } from "react-router-dom";
 
 import {useState, useEffect} from 'react'
 import MovieListItem from './components/MovieListItem';
+
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Logout from "./components/Logout";
+
+import SliderMovies from './components/SliderMovies';
+
+
 
 function App() {
   // const [users,setUsers] = useState([]);
@@ -22,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <h2>hello world</h2>
+
       {/* <div>
         <div className="navbar-nav ms-auto">
           <li className="nav-item">
@@ -49,6 +55,12 @@ function App() {
         {/* <h2>{users.map(user => <li key = {user.id}>{user.email}</li>)}</h2> */}
         <Login/>
         <MovieListItem/>
+
+
+      <br/>
+      {/* <h2>{users.map(user => <li key = {user.id}>{user.email}</li>)}</h2> */}
+      <SliderMovies/>
+      <MovieListItem/>
 
     </div>
   );

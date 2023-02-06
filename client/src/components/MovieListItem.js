@@ -2,6 +2,7 @@ import React from "react";
 import { useState,useEffect } from "react";
 import axios, { all } from "axios";
 import MovieCard from "./MovieCard";
+import './MovieList.css'
 export default function MovieListItem(props) {
   const [movies,setMovies] = useState(null);
   const [trailer,setTrailer]= useState("")
@@ -22,12 +23,11 @@ export default function MovieListItem(props) {
 //  movies.map(movie => trailerURL.push(`https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=5147ae78ba442bfacb0dba2cfe66bf6f`))
 //   console.log(trailerURL) 
   return (
-    <div>
+    
+    <div className="MovieList">
      {movies?<>
-    {movies.map((movie => 
-      
-        <MovieCard key={movie.id} {...movie}/>      
-      
+    {movies.map((movie =>       
+        <MovieCard key={movie.id} {...movie}/>            
     ))}
     </>:null}
     </div>

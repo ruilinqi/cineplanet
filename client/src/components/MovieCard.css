@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+.card{
+ margin-top: 50px;
+ font-family: 'Alfa Slab One', cursive;
+}
+.content{
+  margin: 20px;
+}
