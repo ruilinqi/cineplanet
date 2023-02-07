@@ -4,3 +4,9 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.More {
+  display: flex;  
+  justify-content: center;
+  margin: 50px;
+}
