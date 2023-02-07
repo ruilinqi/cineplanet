@@ -9,6 +9,8 @@ const cors = require('cors')
 const indexRouter = require('./routes/index');
  const usersRouter = require('./routes/users');
  const loginRouter = require('./routes/login');
+ const signupRouter = require('./routes/signup');
+
 const app = express();
 app.use(cors())
 
@@ -22,5 +24,5 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/login', loginRouter);
-
+app.use('/signup', signupRouter);
 module.exports = app;
