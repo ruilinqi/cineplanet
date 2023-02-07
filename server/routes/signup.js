@@ -1,30 +1,32 @@
-const router = require('express').Router()
-
-const bcrypt = require('bcryptjs')
-
-const { v4: uuidv4 } = require('uuid')
-
 const pool = require('../configs/db.config')
 
-router.post('/', async (req, res) => {
-    try {
-        const { name, email, password } = req.body
-        const client = await pool.connect()
-        let sql = "SELECT * FROM users_cred WHERE email=$1"
-        const { rows } = await client.query(sql, [email])
-        if(rows.length > 0){
-            return res.status(401).json({ message: 'User Already Exists' })
-        }
-        const hashedPassword = await bcrypt.hash(password, 10)
-        const id = uuidv4()
-        sql = "INSERT INTO users_cred (id,name,email,password) VALUES ($1,$2,$3,$4)"
-        const { rowCount } = await client.query(sql, [id, name, email, hashedPassword])
-        client.release()
-        res.status(201).json({ message: `${rowCount} User Created` })
-    } catch (error) {
-        console.log(error)
-        res.status(500).json({ message: 'Internal Server Error' })
-    }
-})
+const express = require('express');
+const router = express.Router();
+// const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcryptjs');
 
-module.exports = router
+
+router.post('/', async (req, res) => {
+    const { name, email, password } = req.body;
+  try {
+    // const hashedPassword = await bcrypt.hash(password, 10);
+    const queryResponse = await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *', [name, email, password]); //hashedPassword
+    const user = queryResponse.rows[0];
+
+    console.log("Sign up user:", user);
+    const payload = {
+        userId: user.id,
+        email: user.email,
+      };
+      // const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
+  
+      res.json (payload);
+
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+module.exports = router;
+

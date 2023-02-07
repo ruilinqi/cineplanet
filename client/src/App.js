@@ -8,8 +8,11 @@ import MovieListItem from './components/MovieListItem';
 
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import Logout from "./components/Logout";
+// import Logout from "./components/Logout";
 import Backgroud from './components/Backgroud';
+
+// import Logout from "./components/Logout";
+
 import SliderMovies from './components/SliderMovies';
 
 
@@ -25,39 +28,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* <div>
-        <div className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <Link to={"/login"} className="nav-link">
-              Login
-            </Link>
-          </li>
-
-          <li className="nav-item">
-            <Link to={"/register"} className="nav-link">
-              Sign up
-            </Link>
-          </li>
-        </div>
-      </div> */}
-      
-      {/* <Router>
-    <Routes>
-    <Route path="/login" component={<Login/>} />
-    </Routes>
-    <Routes>
-    <Route component={<MovieListItem/>} />
-    </Routes>
-  </Router> */}
-        {/* <h2>{users.map(user => <li key = {user.id}>{user.email}</li>)}</h2> */}
-        {/* <Login/> */}
+      <Login/>
+      <br/>
+      <Signup/>
       <Backgroud/>
       <SliderMovies/>
-      
-
-
-      <br/>
-      {/* <h2>{users.map(user => <li key = {user.id}>{user.email}</li>)}</h2> */}
       <MovieListItem/>
     </div>
   );
