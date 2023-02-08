@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 // import AuthContext from "../providers/AuthProvider";
+import 'bulma/css/bulma.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import './Login.css'
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -27,31 +31,64 @@ const Signup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-        <input
-        type="name"
-        placeholder="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Register</button>
-      {error && <p>{error}</p>}
-    </form>
+    <div className="columns is-centered user-form">
+      <div className="column is-three-fifths is-offset-one-fifth">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="field">
+            <p className="control has-icons-left">
+            <input
+            className="text-input-padding"
+            type="name"
+            placeholder="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            />
+            <span className="icon is-small is-left">
+            <FontAwesomeIcon icon={solid('user')} />
+            </span>
+            </p>
+          </div>
+          <div className="field">
+            <p className="control has-icons-left">
+            <input
+            className="text-input-padding"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            />
+            <span className="icon is-small is-left">
+            <FontAwesomeIcon icon={solid('envelope')} />
+            </span>
+            </p>
+          </div>
+          <div className="field">
+            <p className="control has-icons-left">
+            <input
+            className="text-input-padding"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            />    
+            <span className="icon is-small is-left">
+            <FontAwesomeIcon icon={solid('lock')} />
+            </span>
+            </p>
+          </div>
+          <div className="field">
+            <p className="control">
+              <button type="submit" className="button is-rounded is-primary button-yellow">Register</button>
+              {error && <p>{error}</p>}
+            </p>
+          </div>      
+        </form>
+      </div>
+    </div>
   );
 };
 

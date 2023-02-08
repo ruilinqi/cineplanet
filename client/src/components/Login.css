@@ -1,0 +1,13 @@
+div .user-form {
+    padding: 200px;
+}
+
+.text-input-padding{
+    padding-left: 40px;
+} 
+
+.column h2 {
+    font-size:x-large;
+    font-weight: 800;
+    padding-bottom: 20px;
+}

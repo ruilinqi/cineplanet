@@ -1,7 +1,9 @@
 import './Modal.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import StripeContainer from './StripeContainer'
 const Modal = ({open,onClose,title,vote,poster,overview}) =>{
+  const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
   useEffect(()=>{
     axios.get(`http://localhost:8080/films/${title}`)
@@ -9,10 +11,13 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
       setFilms(res.data[0]),
     )
   },[])
+  const buyTicketTrigger = () => {
+    setOpenModal(true);
+  }
   
-  if(!open) return null
+  if(!open) {return null}
   return(
-    <div onClick={onClose} className="overlay">
+    <div onClick={()=>{setOpenModal(false); onClose()}} className="overlay">
       <div onClick={(event)=>{event.stopPropagation()}} className="modalContainer">
         <img className='ModalPoster' src={poster}/>
         <div className='modalRight'>
@@ -26,12 +31,15 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
             <iframe src={films.trailer} allowFullScreen/>
           </div>
           <div className='btnContainer'>
-            <button className='btnPrimary'>
+            <button className='btnPrimary' onClick={()=>setOpenModal(true)}>
               <span className='bold'>Buy ticket! (${films.price})</span>
             </button>
+            {openModal ? 
+            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={films.price}/>: null
+            }
             <button className='btnOutline'>
               <span className='bold' onClick={onClose}>Cancel</span>
-            </button>
+            </button>           
           </div>
         </div>  
       </div>
