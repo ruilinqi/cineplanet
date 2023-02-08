@@ -1,8 +1,4 @@
 -- seeds/01_users.sql
 -- users seeds
-INSERT INTO users (name, email, password) VALUES ('Rick', 'rick.sandchez@gmail.com', 'picklerick');
-INSERT INTO users (name, email, password) VALUES ('Lisa', 'lisa.simpson@gmail.com', 'ehhhhh');
-INSERT INTO users (name, email, password) VALUES ('Lindsay', 'link@yahoo.com', 'hyrule');
-INSERT INTO users (name, email, password) VALUES ('Simon', 'simon_bel123@mail.ca', 'dracula');
-INSERT INTO users (name, email, password) VALUES ('Alex', 'all_might@academia.jp', 'plusUltra');
-INSERT INTO users (name, email, password) VALUES ('Mario', 'mario@mushroomkindom.jp', 'plumber79');
+INSERT INTO users (name, email, password) VALUES ('Raylene', 'rayleneqi@gmail.com', '$2a$10$BD8ig2a8wkxqacds.YkxtOJG9tIyYM2uQ7u7IkWMo64XkoPHhmnC.');
+INSERT INTO users (name, email, password) VALUES ('Chunyu', 'chunyu@gmail.ca', '$2a$10$CJYTUQ6lhpj4UP5JCg1lf.dgEmymAKbbVCAK03GjiKS4jL43WpqrW');
