@@ -12,7 +12,7 @@ const Navbar = (props) => {
     //const userAuth = window.localStorage.getItem("user_id");
     console.log("auth:", auth);
     // const u_id = user.user_id;
-   /// if (JSON.parse(userAuth) === user.user_id) {
+    // if (JSON.parse(userAuth) === user.user_id) {
     if (auth.user_email === null) {
         return (
         <div className="navbar">

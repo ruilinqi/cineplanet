@@ -3,11 +3,11 @@
 
 }
 .button-yellow{
-    background-color: yellow!important;
-    color: black!important;
+    background-color: #FFE227!important;
+    color: #000!important;
 }
 
 .button-white{
     background-color: rgb(255, 255, 255)!important;
-    color: black!important;
+    color: #000!important;
 }
