@@ -10,6 +10,8 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
     )
   },[])
   
+  const [openTicketModal, setOpenTicketModal] = useState(false)
+
   if(!open) return null
   return(
     <div onClick={onClose} className="overlay">
@@ -26,7 +28,7 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
             <iframe src={films.trailer} allowFullScreen/>
           </div>
           <div className='btnContainer'>
-            <button className='btnPrimary'>
+            <button className='btnPrimary' onClick={() => setOpenTicketModal(true)}>
               <span className='bold'>Buy ticket! (${films.price})</span>
             </button>
             <button className='btnOutline'>
