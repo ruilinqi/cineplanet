@@ -1,40 +1,37 @@
 import './App.css';
 import axios from 'axios';
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 import {useState, useEffect} from 'react'
+import Home from './components/Home';
 import MovieListItem from './components/MovieListItem';
-
+import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Logout from "./components/Logout";
+
 // import Logout from "./components/Logout";
 import Backgroud from './components/Backgroud';
-
 // import Logout from "./components/Logout";
-
 import SliderMovies from './components/SliderMovies';
-
+import { AuthProvider } from './providers/AuthProvider';
 
 function App() {
-  // const [users,setUsers] = useState([]);
-
-  // useEffect(()=>{
-  //   axios.get('/users').then(res => {
-  //     let result = res.data.users;
-  //     setUsers(result)
-  //   })
-  // },[])
-
   return (
-    <div className="App">
-      <Login/>
-      <br/>
-      <Signup/>
-      <Backgroud/>
-      <SliderMovies/>
-      <MovieListItem/>
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+            {/* nested route inside*/}
+          </Route>
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/logout" element={<Logout/>} />
+
+        </Routes>
+      </BrowserRouter>  
+    </AuthProvider>
   );
 }
 
