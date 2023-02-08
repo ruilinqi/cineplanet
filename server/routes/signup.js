@@ -3,14 +3,14 @@ const pool = require('../configs/db.config')
 const express = require('express');
 const router = express.Router();
 // const jwt = require('jsonwebtoken');
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 
 router.post('/', async (req, res) => {
     const { name, email, password } = req.body;
   try {
-    // const hashedPassword = await bcrypt.hash(password, 10);
-    const queryResponse = await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *', [name, email, password]); //hashedPassword
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const queryResponse = await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *', [name, email, hashedPassword]); //hashedPassword
     const user = queryResponse.rows[0];
 
     console.log("Sign up user:", user);

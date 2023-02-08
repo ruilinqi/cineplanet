@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import axios from "axios";
 // import { Redirect } from 'react-router-dom';
 // import { useNavigate } from "react-router-dom";
-// import AuthService from "../services/auth.service";
+import AuthContext from "../providers/AuthProvider";
 
 const Login = () => {
+
+  const { setAuth } = useContext(AuthContext);
+  const rawAuth = window.localStorage.getItem("id")
+  const userAuth = JSON.parse(rawAuth)
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -22,13 +27,22 @@ const Login = () => {
         setError(data.error);
       } else {
         localStorage.setItem('token', data.token);
-        window.location.href = '/login';
+        console.log('setitem users', data.token) // undefined
+
+        
+        setAuth({ email, password })
+        const user_id = response?.data?.id
+        window.localStorage.setItem("password", JSON.stringify(password))
+        window.localStorage.setItem("user_email", JSON.stringify(email))
+        setEmail('')
+        setPassword('');
+
+        window.location.href = '/';
       }
     } catch (err) {
       setError(err);
     }
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <input
