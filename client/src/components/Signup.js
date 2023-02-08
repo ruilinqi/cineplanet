@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import AuthContext from "../providers/AuthProvider";
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -18,7 +19,7 @@ const Signup = () => {
       if (data.error) {
         setError(data.error);
       } else {
-        window.location.href = '/signup';
+        window.location.href = '/login';
       }
     } catch (err) {
       setError(err);
