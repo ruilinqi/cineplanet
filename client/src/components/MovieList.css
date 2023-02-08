@@ -10,3 +10,40 @@
   justify-content: center;
   margin: 50px;
 }
+.searchPart {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+input[type="text"] {
+  background-color: #fff;
+  width: 340px;
+  height: 50px;
+  border: 2px solid black;
+  border-left: none;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 0 25px 25px 0;
+}
+
+input[type="submit"] {
+  position: relative;
+  border-radius: 25px 0 0 25px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ffc107;
+  border: 2px solid black;
+  color: #fff;
+}
