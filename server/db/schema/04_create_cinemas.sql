@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS cinemas CASCADE;
+
+CREATE TABLE cinemas (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  location VARCHAR(255) NOT NULL
+);
+
+

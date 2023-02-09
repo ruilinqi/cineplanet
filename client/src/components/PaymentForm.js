@@ -67,8 +67,8 @@ export default function PaymentForm({price}) {
             <source src={cinima} type="video/mp4"></source>
           </video>
           <br/>
-          <h1>{auth.user_email}</h1>
-          <h1>Welcome to cineplanet!</h1>
+          <h2>Welcome to cineplanet!</h2>
+          <h2>{auth.user_email}</h2>
           <br/>
           <form onSubmit={handleSubmit} className='paymentForm'>
             <fieldset className="FormGroup">
@@ -84,8 +84,7 @@ export default function PaymentForm({price}) {
           <video autoPlay loop muted playsInline className="back-video">
             <source src={cinima} type="video/mp4"></source>
           </video>
-            <h2>Success!! 🥳</h2>
-            <h3>{auth.user_email}</h3>
+            <h2>Enjoy your movie {auth.user_email}</h2>
           </div>
         </div>
       }

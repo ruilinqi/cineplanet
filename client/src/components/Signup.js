@@ -34,7 +34,7 @@ const Signup = () => {
     <div className="columns is-centered user-form">
       <div className="column is-three-fifths is-offset-one-fifth">
         <h2>Register</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-page">
           <div className="field">
             <p className="control has-icons-left">
             <input

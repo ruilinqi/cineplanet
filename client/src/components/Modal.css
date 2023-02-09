@@ -8,6 +8,7 @@
 
 .modalContainer {
   max-width: 900px;
+  min-height: 600px;
   width: 100%;
   position: fixed;
   top: 50%;

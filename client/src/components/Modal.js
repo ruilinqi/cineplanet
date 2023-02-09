@@ -2,20 +2,21 @@ import './Modal.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import StripeContainer from './StripeContainer'
+import TicketModal from './TicketModal'
+
 const Modal = ({open,onClose,title,vote,poster,overview}) =>{
   const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
   useEffect(()=>{
     axios.get(`http://localhost:8080/films/${title}`)
     .then( res => 
-      setFilms(res.data[0]),
+      setFilms(res.data[0])
     )
   },[])
-  const buyTicketTrigger = () => {
-    setOpenModal(true);
-  }
   
+
   if(!open) {return null}
+
   return(
     <div onClick={()=>{setOpenModal(false); onClose()}} className="overlay">
       <div onClick={(event)=>{event.stopPropagation()}} className="modalContainer">
@@ -35,8 +36,11 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
               <span className='bold'>Buy ticket! (${films.price})</span>
             </button>
             {openModal ? 
+            <TicketModal open = {openModal} onClose={() => setOpenModal(false)} title={title} price={films.price}/>: null
+            }           
+            {/* {openModal ? 
             <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={films.price}/>: null
-            }
+            } */}
             <button className='btnOutline'>
               <span className='bold' onClick={onClose}>Cancel</span>
             </button>           

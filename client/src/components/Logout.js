@@ -5,11 +5,12 @@ import AuthContext from "../providers/AuthProvider";
 
 const Logout = () => {
   const { setAuth } = useContext(AuthContext)
-
+  
   const handleSubmit = () => {
     setAuth ({user_email: null, password: null})
     window.localStorage.clear()
   }
+  
   return(
     <div className="columns is-centered user-form">
       <div className="column is-three-fifths is-offset-one-fifth">

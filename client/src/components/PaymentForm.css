@@ -80,6 +80,9 @@
 	color: white;
 }
 
+.paymentContainer h2 {
+	color: white;
+}
 .back-video{
 	z-index: -1;
 	position: absolute;

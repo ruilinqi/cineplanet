@@ -1,0 +1,12 @@
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-18', '10:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-18', '14:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-18', '18:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-19', '10:30');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-19', '14:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-23', '10:30');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (1, '2023-02-23', '16:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (2, '2023-02-18', '10:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (2, '2023-02-18', '14:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (2, '2023-02-18', '18:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (2, '2023-02-19', '10:30');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (2, '2023-02-19', '14:00');

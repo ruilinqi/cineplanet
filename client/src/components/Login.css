@@ -10,4 +10,18 @@ div .user-form {
     font-size:x-large;
     font-weight: 800;
     padding-bottom: 20px;
+    color: white;
+}
+
+.login-page {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px;
+   margin-right: 300px;
+   border: 2px solid black;
+   border-radius: 5em;
 }
