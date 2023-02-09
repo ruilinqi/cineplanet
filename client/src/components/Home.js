@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Backgroud from './Backgroud';
 import SliderMovies from './SliderMovies';
 import MovieListItem from "./MovieListItem";
+import StripeContainer from "./StripeContainer";
 
 const Home = () => {
   return (
