@@ -11,6 +11,7 @@ const TicketModal = ({open, onClose, title, price}) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [datesTimes, setDatesTimes] = useState([]);
+  const [ticketCount, setTicketCount] = useState(1);
 
   //cinema
   useEffect(() => {
@@ -43,6 +44,9 @@ const TicketModal = ({open, onClose, title, price}) => {
   }
   console.log("selectedDate", selectedDate);
   console.log("selectedTime", selectedTime);
+
+  // change amount o f tickets
+
   if(!open) {return null}
 
   return (
@@ -79,19 +83,26 @@ const TicketModal = ({open, onClose, title, price}) => {
                 ))
             }
           </select>
-          <p className='bold'>Your ticket's price: {price}</p>
+          <div className='ticketCount'>
+            <button className='btn' onClick={() => setTicketCount(ticketCount - 1)}>-</button>
+            <span>{ticketCount}</span>
+            <button className='btn' onClick={() => setTicketCount(ticketCount + 1)}>+</button>
+          </div>
+          <p className='bold'>Your tickets' price: {price * ticketCount}</p>
 
           <div className='btnContainer'>
             <button className='btnPrimary' onClick={()=>setOpenModal(true)}>
               <span className='bold'>Checout!</span>
             </button>    
             {openModal ? 
-            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={price}/>: null
+            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={price * ticketCount}/>: null
             }
             <button className='btnOutline'>
             <span className='bold' onClick={onClose}>Cancel</span>
             </button>           
           </div>
+
+
         </div>
       </div>
     </div>

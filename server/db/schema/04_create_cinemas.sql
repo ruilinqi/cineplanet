@@ -5,5 +5,3 @@ CREATE TABLE cinemas (
   name VARCHAR(255),
   location VARCHAR(255) NOT NULL
 );
-
-
