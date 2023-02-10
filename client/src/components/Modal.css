@@ -71,3 +71,7 @@
 .overlay{
   z-index: 1000;
 }
+
+.text-info {
+  bottom: 0;
+}

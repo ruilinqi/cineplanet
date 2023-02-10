@@ -1,12 +1,16 @@
 import './Modal.css'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import AuthContext from "../providers/AuthProvider";
 import StripeContainer from './StripeContainer'
 import TicketModal from './TicketModal'
 
 const Modal = ({open,onClose,title,vote,poster,overview}) =>{
   const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
+  const { auth } = useContext(AuthContext);
+  const [showMessage, setShowMessage] = useState(false)
+
   useEffect(()=>{
     axios.get(`http://localhost:8080/films/${title}`)
     .then( res => 
@@ -16,6 +20,15 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
   
 
   if(!open) {return null}
+  
+  const handleClick = () => {
+    if (auth.user_email) {
+      setOpenModal(true)
+    } else {
+      setShowMessage(true)
+      setTimeout(() => setShowMessage(false), 5000)
+    }
+  }
 
   return(
     <div onClick={()=>{setOpenModal(false); onClose()}} className="overlay">
@@ -32,19 +45,20 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
             <iframe src={films.trailer} allowFullScreen/>
           </div>
           <div className='btnContainer'>
-            <button className='btnPrimary' onClick={()=>setOpenModal(true)}>
+            <button className='btnPrimary' onClick={handleClick}>
               <span className='bold'>Buy ticket! (${films.price})</span>
             </button>
-            {openModal ? 
-            <TicketModal open = {openModal} onClose={() => setOpenModal(false)} title={title} price={films.price}/>: null
-            }           
+            {openModal ?
+              <TicketModal open={openModal} onClose={() => setOpenModal(false)} title={title} price={films.price} /> : null
+            }
+            <button className='btnOutline'>
+              <span className='bold' onClick={onClose}>Cancel</span>
+            </button>
+          </div>
+          {showMessage && <div className="message">Please login or signup to purchase a ticket.</div>}
             {/* {openModal ? 
             <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={films.price}/>: null
             } */}
-            <button className='btnOutline'>
-              <span className='bold' onClick={onClose}>Cancel</span>
-            </button>           
-          </div>
         </div>  
       </div>
     </div>
