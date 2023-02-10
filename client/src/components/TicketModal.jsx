@@ -44,12 +44,12 @@ const TicketModal = ({open, onClose, title, price}) => {
   const uniqueDates = [...new Set(datesTimes.map(dt => dt.play_date))];
 
   const handleChange = (selectedOption) => {
-    console.log("handleChange", selectedOption)
+    console.log("Selected Cinema:", selectedOption)
   }
   console.log("selectedDate", selectedDate);
   console.log("selectedTime", selectedTime);
 
-  //
+  // Amount of tickets cannot be nagetive
   const handleTicketChange = (value) => {
     if (ticketAmount + value >= 0) {
     setTicketAmount(ticketAmount + value);
@@ -63,6 +63,9 @@ const TicketModal = ({open, onClose, title, price}) => {
       <div onClick={(event)=>{event.stopPropagation()}} className="modalContainer">
         <div className="centerContainer">
           <h1>Select your cinema and moive time!</h1>
+          <span className='closeBtn' onClick={onClose}>
+            X
+          </span>
           <p className='bold'>Your moive: {title}</p>
           <div class="columns is-centered">
           <div className="dropdown-column-one">
@@ -75,9 +78,11 @@ const TicketModal = ({open, onClose, title, price}) => {
             <label>Date:</label>
             <Select
               options={uniqueDates.map(date => ({ value: date, label: date.split("T")[0] }))}
-              value={selectedDate}
-              onChange={selectedOption => setSelectedDate(selectedOption.value)}
-              placeholder="Select a date"
+              value={{label: selectedDate.split("T")[0]}}
+              onChange={selectedOption => {
+                setSelectedDate(selectedOption.value);
+                setSelectedTime("");}}
+              placeholder={"Select a date"}
             />
           </div>
           <div className="dropdown-column-two">
@@ -85,10 +90,10 @@ const TicketModal = ({open, onClose, title, price}) => {
             <Select
               options={datesTimes
                 .filter(dt => dt.play_date === selectedDate)
-                .map(dt => ({ value: dt.play_time, label: dt.play_time }))}
-              value={selectedTime}
+                .map(dt => ({ value: dt.play_time, label: dt.play_time }))} v  
+              value={{label: selectedTime}}
               onChange={selectedOption => setSelectedTime(selectedOption.value)}
-              placeholder="Select a time"
+              placeholder={"Select a time"}
             />
           </div>
           </div>
@@ -111,8 +116,6 @@ const TicketModal = ({open, onClose, title, price}) => {
             <span className='bold' onClick={onClose}>Cancel</span>
             </button>           
           </div>
-
-
         </div>
       </div>
     </div>
