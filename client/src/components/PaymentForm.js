@@ -1,9 +1,11 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import axios from "axios";
 import './PaymentForm.css'
 import cinima from "../assets/cinima.mp4"
 import AuthContext from "../providers/AuthProvider";
+// import OrderContext from "../providers/ContextProvider";
+import { OrderContext } from "../providers/ContextProvider"
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -26,12 +28,17 @@ const CARD_OPTIONS = {
 }
 
 
-export default function PaymentForm({price}) {
+export default function PaymentForm({title, price, selectedDate, selectedTime, ticketAmount}) {
   const { auth } = useContext(AuthContext);
   const [success, setSuccess] = useState(false)
   const stripe = useStripe()
   const elements = useElements();
+  const { order, setOrder } = useContext(OrderContext);
 
+  console.log("Moive ticket:", title);
+  console.log("Moive Date:", selectedDate);
+  console.log("Moive Time:", selectedTime);
+  console.log("order", order);
   const handleSubmit = async (event) => {
     event.preventDefault()
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -46,10 +53,16 @@ export default function PaymentForm({price}) {
           amount: price*100,
           id
         })
-
+        
         if (response.data.success) {
-          console.log("Successful payment")
+          console.log("Successful payment", title)
           setSuccess(true)
+          setOrder({
+            title: title,
+            selectedDate: selectedDate,
+            selectedTime: selectedTime,
+            ticketAmount: ticketAmount,
+          });
         }
       } catch (error) {
         console.log('Error==>', error)
@@ -84,7 +97,8 @@ export default function PaymentForm({price}) {
           <video autoPlay loop muted playsInline className="back-video">
             <source src={cinima} type="video/mp4"></source>
           </video>
-            <h2>Enjoy your movie {auth.user_email}</h2>
+            <h2>Enjoy your movie! {auth.user_email}</h2>
+            <p>Your order: {order.title} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
           </div>
         </div>
       }

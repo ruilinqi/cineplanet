@@ -16,21 +16,25 @@ import Backgroud from './components/Backgroud';
 // import Logout from "./components/Logout";
 import SliderMovies from './components/SliderMovies';
 import { AuthProvider } from './providers/AuthProvider';
+import OrderProvider from './providers/ContextProvider';
 
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            {/* nested route inside*/}
-          </Route>
-          <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/logout" element={<Logout/>} />
+      <OrderProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}>
+              {/* nested route inside*/}
+            </Route>
+            <Route path="/login" element={<Login/>} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/logout" element={<Logout/>} />
 
-        </Routes>
-      </BrowserRouter>  
+          </Routes>
+        </BrowserRouter>  
+
+      </OrderProvider>
     </AuthProvider>
   );
 }

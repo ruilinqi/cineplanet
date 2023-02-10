@@ -110,7 +110,7 @@ const TicketModal = ({open, onClose, title, price}) => {
               <span className='bold'>Checout!</span>
             </button>    
             {openModal ? 
-            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={price * ticketAmount}/>: null
+            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} title={title} price={price * ticketAmount} selectedDate={selectedDate.split("T")[0] } selectedTime={selectedTime} ticketAmount={ticketAmount}/>: null
             }
             <button className='btnOutline'>
             <span className='bold' onClick={onClose}>Cancel</span>
