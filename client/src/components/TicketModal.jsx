@@ -3,7 +3,9 @@ import axios from "axios";
 import Select from 'react-select';
 import StripeContainer from './StripeContainer'
 import 'bulma/css/bulma.css'
+import './Modal.css'
 import './TicketModal.css'
+
 const TicketModal = ({open, onClose, title, price}) => {
   const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
@@ -59,47 +61,44 @@ const TicketModal = ({open, onClose, title, price}) => {
   return (
     <div onClick={()=>{setOpenModal(false); onClose()}} className="overlay">
       <div onClick={(event)=>{event.stopPropagation()}} className="modalContainer">
-        <div>
+        <div className="centerContainer">
           <h1>Select your cinema and moive time!</h1>
           <p className='bold'>Your moive: {title}</p>
-          <div className="">
+          <div class="columns is-centered">
+          <div className="dropdown-column-one">
             <label>Cinema:</label>
-            <Select className="dropdown" options={optionsCinema} onChange={handleChange} placeholder={"Select a cinema location"}/>
+            <Select options={optionsCinema} onChange={handleChange} placeholder={"Select a cinema location"}/>
           </div>
-          
-          <label>Date:</label>
-          <select value={selectedDate} onChange={e => setSelectedDate(e.target.value)}>
-          <option value="">Select a date</option>
-          {
-            uniqueDates.map(date => (
-              <option key={date} value={date}>
-                {date.split("T")[0]}
-              </option>
-            ))
-          }
-          </select>
-
-          <label>Time:</label>
-          <select value={selectedTime} onChange={e => setSelectedTime(e.target.value)}>
-            <option value="">Select a time</option>
-            {
-              datesTimes
+          </div>
+          <div class="columns is-vcentered is-centered">
+          <div className="dropdown-column-two">
+            <label>Date:</label>
+            <Select
+              options={uniqueDates.map(date => ({ value: date, label: date.split("T")[0] }))}
+              value={selectedDate}
+              onChange={selectedOption => setSelectedDate(selectedOption.value)}
+              placeholder="Select a date"
+            />
+          </div>
+          <div className="dropdown-column-two">
+            <label>Time:</label>
+            <Select
+              options={datesTimes
                 .filter(dt => dt.play_date === selectedDate)
-                .map(dt => (
-                  <option key={dt.play_time} value={dt.play_time}>
-                    {dt.play_time}
-                  </option>
-                ))
-            }
-          </select>
-
+                .map(dt => ({ value: dt.play_time, label: dt.play_time }))}
+              value={selectedTime}
+              onChange={selectedOption => setSelectedTime(selectedOption.value)}
+              placeholder="Select a time"
+            />
+          </div>
+          </div>
           {/* amount of tickets */}
           <div className='ticketCount'>
             <button className='btn button is-link is-light is-round amount-btn' onClick={() => handleTicketChange(-1)}>-</button>
             <span className="countNumber">{ticketAmount}</span>
             <button className='btn button is-link is-light is-round amount-btn' onClick={() => handleTicketChange(+1)}>+</button>
           </div>
-          <p className='bold'>Subtotal: ${price * ticketAmount}</p>
+          <p className='bold subtotal-text'>Subtotal: ${price * ticketAmount}</p>
 
           <div className='btnContainer'>
             <button className='btnPrimary' onClick={()=>setOpenModal(true)}>

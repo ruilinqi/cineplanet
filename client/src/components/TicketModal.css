@@ -1,3 +1,14 @@
+.centerContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.centerContainer h1{
+    padding-top: 20px;
+}
 .amount-btn {
     max-width: 5%;
 }
@@ -5,8 +16,17 @@
     padding: 10px;
     position:relative; top:15px;
 }
-.dropdown {
-    /* width: 400px;  */
-    /* max-height: 30px; */
 
+.dropdown-column-one {
+    padding: 20px;
+    width: 60%;
+}
+
+.dropdown-column-two {
+    padding: 20px;
+    width: 30%;
+}
+
+.subtotal-text {
+    padding-top: 30px;
 }
