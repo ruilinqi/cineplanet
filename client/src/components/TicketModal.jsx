@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Select from 'react-select';
 import StripeContainer from './StripeContainer'
-
+import 'bulma/css/bulma.css'
+import './TicketModal.css'
 const TicketModal = ({open, onClose, title, price}) => {
   const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
@@ -11,7 +12,8 @@ const TicketModal = ({open, onClose, title, price}) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [datesTimes, setDatesTimes] = useState([]);
-  const [ticketCount, setTicketCount] = useState(1);
+  const [ticketAmount, setTicketAmount] = useState(1);
+
 
   //cinema
   useEffect(() => {
@@ -45,7 +47,12 @@ const TicketModal = ({open, onClose, title, price}) => {
   console.log("selectedDate", selectedDate);
   console.log("selectedTime", selectedTime);
 
-  // change amount o f tickets
+  //
+  const handleTicketChange = (value) => {
+    if (ticketAmount + value >= 0) {
+    setTicketAmount(ticketAmount + value);
+    }
+    };
 
   if(!open) {return null}
 
@@ -54,10 +61,12 @@ const TicketModal = ({open, onClose, title, price}) => {
       <div onClick={(event)=>{event.stopPropagation()}} className="modalContainer">
         <div>
           <h1>Select your cinema and moive time!</h1>
-          <span className='bold'>Your moive: {title}</span>
-
-          <Select options={optionsCinema} onChange={handleChange}/>
-
+          <p className='bold'>Your moive: {title}</p>
+          <div className="">
+            <label>Cinema:</label>
+            <Select className="dropdown" options={optionsCinema} onChange={handleChange} placeholder={"Select a cinema location"}/>
+          </div>
+          
           <label>Date:</label>
           <select value={selectedDate} onChange={e => setSelectedDate(e.target.value)}>
           <option value="">Select a date</option>
@@ -83,19 +92,21 @@ const TicketModal = ({open, onClose, title, price}) => {
                 ))
             }
           </select>
+
+          {/* amount of tickets */}
           <div className='ticketCount'>
-            <button className='btn' onClick={() => setTicketCount(ticketCount - 1)}>-</button>
-            <span>{ticketCount}</span>
-            <button className='btn' onClick={() => setTicketCount(ticketCount + 1)}>+</button>
+            <button className='btn button is-link is-light is-round amount-btn' onClick={() => handleTicketChange(-1)}>-</button>
+            <span className="countNumber">{ticketAmount}</span>
+            <button className='btn button is-link is-light is-round amount-btn' onClick={() => handleTicketChange(+1)}>+</button>
           </div>
-          <p className='bold'>Your tickets' price: {price * ticketCount}</p>
+          <p className='bold'>Subtotal: ${price * ticketAmount}</p>
 
           <div className='btnContainer'>
             <button className='btnPrimary' onClick={()=>setOpenModal(true)}>
               <span className='bold'>Checout!</span>
             </button>    
             {openModal ? 
-            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={price * ticketCount}/>: null
+            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} price={price * ticketAmount}/>: null
             }
             <button className='btnOutline'>
             <span className='bold' onClick={onClose}>Cancel</span>
