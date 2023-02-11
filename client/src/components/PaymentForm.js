@@ -1,6 +1,10 @@
 import React, { useState, useContext } from "react";
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import axios from "axios";
+import 'bulma/css/bulma.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import "./UserAvatar.css"
 import './PaymentForm.css'
 import cinima from "../assets/cinima.mp4"
 import AuthContext from "../providers/AuthProvider";
@@ -108,16 +112,54 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
             <button id ="payButton">Pay</button>
           </form>
         </div>
-        : <div className="paymentContainer">
+        : <div>
+        <div className="paymentContainer">
           <div className="paymentDetail">
           <video autoPlay loop muted playsInline className="back-video">
             <source src={cinima} type="video/mp4"></source>
           </video>
-            <h2>Enjoy your movie! {auth.user_email}</h2>
-            <p>Your order: {title} {selectedCinema} {selectedDate} {selectedTime} {ticketAmount}</p>
-            <img src = {poster}/>
+            <h2 className="topText">Enjoy your movie! {auth.user_email}</h2>
           </div>
         </div>
+
+            <div class="container ticketContainerAfterPay">
+              <div class="item columns is-centered transparent-background">
+                <div class="item-right">
+                  {/* <h2 class="num">23</h2>
+                  <p class="day">Feb</p> */}
+                  <img src = {poster}/>
+                  <span class="up-border"></span>
+                  <span class="down-border"></span>
+                </div>
+                
+                <div class="item-left">
+                  <p class="event">Movie</p>
+                  <h2 class="title">{title}</h2>
+                  
+                  <div class="sce">
+                    <span className="icon is-small is-left">
+                    <FontAwesomeIcon icon={solid('calendar-days')} />
+                    </span>
+                    <p>{selectedDate}</p>
+                    <br/> 
+                    <span className="icon is-small is-left">
+                    <FontAwesomeIcon icon={solid('clock')} />
+                    </span>
+                    <p>{selectedTime}</p>
+                  </div>
+                  <div class="loc">
+                    <span className="icon is-small is-left">
+                    <FontAwesomeIcon icon={solid('location-dot')} />
+                    </span>
+                    <p>{selectedCinema} </p>
+                  </div>
+                  <div class="tickets">
+                    <p>Tickets X {ticketAmount}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
       }
     </>
   )

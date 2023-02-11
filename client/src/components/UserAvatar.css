@@ -156,7 +156,7 @@ div.container {
     width: 100%;
     margin-right: 20px
   }
-  div.container {
+  div .container {
     margin: 0 20px auto
   }
 }
@@ -168,4 +168,15 @@ div.container {
   padding: 5px;
   /* border-top: 1px solid #ffffff; */
   background-color: #000;
+}
+
+.ticketContainerAfterPay {
+  margin: 0!important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.transparent-background{
+  background-color: rgba(255, 255, 255, 0.88)!important;
 }
