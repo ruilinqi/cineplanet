@@ -67,13 +67,13 @@ const TicketModal = ({open, onClose, title, price}) => {
             X
           </span>
           <p className='bold'>Your moive: {title}</p>
-          <div className="columns is-centered">
+          <div class="columns is-centered">
           <div className="dropdown-column-one">
             <label>Cinema:</label>
             <Select options={optionsCinema} onChange={handleChange} placeholder={"Select a cinema location"}/>
           </div>
           </div>
-          <div className="columns is-vcentered is-centered">
+          <div class="columns is-vcentered is-centered">
           <div className="dropdown-column-two">
             <label>Date:</label>
             <Select

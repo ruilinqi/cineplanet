@@ -14,7 +14,9 @@ export default function MovieListItem(props) {
   const [activeGenre,setActiveGenre] = useState(0);
 
   const showMoreMovies = () => {
-    setVisible(prev => prev + 3)
+    setTimeout(()=>{
+      setVisible(prev => prev + 3)
+    },1000)
   }
   useEffect(() => {
     const movieURL = `https://api.themoviedb.org/3/movie/top_rated?api_key=5147ae78ba442bfacb0dba2cfe66bf6f`;
@@ -55,7 +57,7 @@ export default function MovieListItem(props) {
         </> : null}
       </div>
       <div className="More">
-        <button className="button" onClick={showMoreMovies}>Show More</button>
+        <button className="loading-button" onClick={showMoreMovies}>Show More</button>
       </div>
     </>
   )

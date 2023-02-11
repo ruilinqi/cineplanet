@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Logout from "./components/Logout";
-
 // import Logout from "./components/Logout";
 import Backgroud from './components/Backgroud';
 // import Logout from "./components/Logout";
@@ -30,7 +29,7 @@ function App() {
           <Route path="/logout" element={<Logout/>} />
 
         </Routes>
-      </BrowserRouter>  
+      </BrowserRouter> 
     </AuthProvider>
   );
 }

@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Backgroud from './Backgroud';
 import SliderMovies from './SliderMovies';
 import MovieListItem from "./MovieListItem";
+import BackToTopButton from "./BackToTopButton";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Backgroud/>
       <SliderMovies/>
       <MovieListItem/>
+      <BackToTopButton/>
     </div>
   )
 };
