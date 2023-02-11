@@ -5,6 +5,7 @@ import StripeContainer from './StripeContainer'
 import 'bulma/css/bulma.css'
 import './Modal.css'
 import './TicketModal.css'
+import Backgroud from "./Backgroud";
 
 const TicketModal = ({open, onClose, title, price, poster}) => {
   const [openModal, setOpenModal] = useState(false)
@@ -69,16 +70,18 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
           <span className='closeBtn' onClick={onClose}>
             X
           </span>
-          <p className='bold'>Your moive: {title}</p>
-          <div class="columns is-centered">
+          <p className='movieTitle'>Your moive: {title}</p>
+          <div className="columns is-centered">
           <div className="dropdown-column-one">
-            <label>Cinema:</label>
+            <input type="submit" value ="Cinema" style={{height:"65px",
+    border: "none", background : "#411b57"}}/>
             <Select options={optionsCinema} onChange={handleChange} placeholder={"Select a cinema location"}/>
           </div>
           </div>
-          <div class="columns is-vcentered is-centered">
+          <div className="columns">
           <div className="dropdown-column-two">
-            <label>Date:</label>
+            <input type="submit" value= "Date"style={{height:"65px",
+    border: "none", background : "#411b57", color:"white"}}/>
             <Select
               options={uniqueDates.map(date => ({ value: date, label: date.split("T")[0] }))}
               value={{label: selectedDate.split("T")[0]}}
@@ -89,14 +92,15 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
             />
           </div>
           <div className="dropdown-column-two">
-            <label>Time:</label>
+            <input type="submit" value="Time"style={{height:"65px",
+    border: "none", background : "#411b57", color:"white"}} />
             <Select
               options={datesTimes
                 .filter(dt => dt.play_date === selectedDate)
                 .map(dt => ({ value: dt.play_time, label: dt.play_time }))} v  
               value={{label: selectedTime}}
               onChange={selectedOption => setSelectedTime(selectedOption.value)}
-              placeholder={"Select a time"}
+              placeholder={"Select a time"} 
             />
           </div>
           </div>

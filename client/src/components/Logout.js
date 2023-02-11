@@ -8,9 +8,9 @@ const Logout = () => {
   
   const handleSubmit = () => {
     setAuth ({user_email: null, password: null})
-    // window.localStorage.clear()
-    window.localStorage.removeItem("user_email")
-    window.localStorage.removeItem("password")
+    window.localStorage.clear()
+    // window.localStorage.removeItem("user_email")
+    // window.localStorage.removeItem("password")
   }
   
   return(
