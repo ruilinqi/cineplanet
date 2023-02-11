@@ -13,11 +13,6 @@ const Navbar = (props) => {
     const { auth } = useContext(AuthContext);
     const [openModal, setOpenModal] = useState(false)
 
-    const [popup, setPopup] = useState(false);
-
-    const togglePopup = () => {
-        setPopup(!popup);
-    };
     //const userAuth = window.localStorage.getItem("user_id");
     console.log("auth:", auth);
     // const u_id = user.user_id;
@@ -57,16 +52,12 @@ const Navbar = (props) => {
                         <div className="">
                         <button className="button" onClick={() => setOpenModal(true)}>Avatar</button>
                         <UserAvatar open={openModal} onClose={() => setOpenModal(false)} />
-                        {/* <UserAvatar src="https://via.placeholder.com/150"  /> */}
-                        {/* <UserAvatar onClick={togglePopup} /> */}
                         {/* <img
                         className="nav_avatar"
                         src="https://images.freeimages.com/images/large-previews/7e8/man-avatar-1632965.jpg"
                         alt="Avatar"
                         /> */}
                         </div>
-                        {/* <UserAvatar open={openModal} onClose={() => setOpenModal(false)}
-                        title={title} /> */}
                     </div>
                     <div className="navbar-item">
                         <div className="buttons">

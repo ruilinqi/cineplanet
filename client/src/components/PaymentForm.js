@@ -4,7 +4,6 @@ import axios from "axios";
 import './PaymentForm.css'
 import cinima from "../assets/cinima.mp4"
 import AuthContext from "../providers/AuthProvider";
-// import OrderContext from "../providers/ContextProvider";
 import { OrderContext } from "../providers/ContextProvider"
 
 const CARD_OPTIONS = {
@@ -33,12 +32,12 @@ export default function PaymentForm({title, price, selectedDate, selectedTime, t
   const [success, setSuccess] = useState(false)
   const stripe = useStripe()
   const elements = useElements();
-  const { order, setOrder } = useContext(OrderContext);
-
+  //  const { order, setOrder } = useContext(OrderContext);
+  const { allOrders, setAllOrders } = useContext(OrderContext);
   console.log("Moive ticket:", title);
   console.log("Moive Date:", selectedDate);
   console.log("Moive Time:", selectedTime);
-  console.log("order", order);
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -57,12 +56,23 @@ export default function PaymentForm({title, price, selectedDate, selectedTime, t
         if (response.data.success) {
           console.log("Successful payment", title)
           setSuccess(true)
-          setOrder({
+
+          const newOrder = {
             title: title,
             selectedDate: selectedDate,
             selectedTime: selectedTime,
-            ticketAmount: ticketAmount,
-          });
+            ticketAmount: ticketAmount
+          };
+          window.localStorage.setItem("title", JSON.stringify(title))
+          window.localStorage.setItem("selectedDate", JSON.stringify(selectedDate))
+          window.localStorage.setItem("selectedTime", JSON.stringify(selectedTime))
+          window.localStorage.setItem("ticketAmount", JSON.stringify(ticketAmount))
+          console.log("new order", newOrder);
+          
+          setAllOrders([...allOrders, newOrder]);
+          window.localStorage.setItem("allOrders", JSON.stringify(allOrders))
+
+          console.log("all orders", allOrders);
         }
       } catch (error) {
         console.log('Error==>', error)
@@ -98,7 +108,7 @@ export default function PaymentForm({title, price, selectedDate, selectedTime, t
             <source src={cinima} type="video/mp4"></source>
           </video>
             <h2>Enjoy your movie! {auth.user_email}</h2>
-            <p>Your order: {order.title} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
+            <p>Your order: {title} {selectedDate} {selectedTime} {ticketAmount}</p>
           </div>
         </div>
       }

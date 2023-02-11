@@ -6,7 +6,8 @@ import { OrderContext } from "../providers/ContextProvider"
 const UserAvatar = ({ open,onClose }) => {
   const [openModal, setOpenModal] = useState(false);
   const { auth } = useContext(AuthContext);
-  const { order } = useContext(OrderContext);
+  // const { order } = useContext(OrderContext);
+  const { allOrders } = useContext(OrderContext);
 
   if(!open) {return null}
 
@@ -16,12 +17,17 @@ const UserAvatar = ({ open,onClose }) => {
     <div>
         <div className="popup">
           <div className="popup-header">
-            <h3>User Information</h3>
-            
+            <h3>Your Information:</h3>
           </div>
           <div className="popup-body">
             <p>Email: {auth.user_email}</p>
-            <p>You movie ticket: {order.title} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
+            {/* <p>You movie ticket: {order.title} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p> */}
+            <h3>Your Tickets: </h3>
+            {allOrders.map((order, index) => (
+            <div key={index}>
+            <p>Order {index + 1}: {order.title} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
+            </div>
+            ))}
           </div>
         </div>
 
