@@ -22,7 +22,7 @@ const Navbar = (props) => {
         <div className="navbar">
             <div className="navbar-start">
             <div className="navbar-item">
-            <Link to="/login">Home</Link>
+            <Link to="/">Home</Link>
             </div>
             </div>
             <div className="navbar-end">
@@ -44,7 +44,7 @@ const Navbar = (props) => {
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="navbar-item">
-                    <Link to="/login">Home</Link>
+                    <Link to="/">Home</Link>
                     </div>
                 </div>
                 <div className="navbar-end">

@@ -15,6 +15,7 @@ const TicketModal = ({open, onClose, title, price}) => {
   const [selectedTime, setSelectedTime] = useState('');
   const [datesTimes, setDatesTimes] = useState([]);
   const [ticketAmount, setTicketAmount] = useState(1);
+  const [selectedCinema, setSelectedCinema] = useState(null);
 
 
   //cinema
@@ -44,8 +45,10 @@ const TicketModal = ({open, onClose, title, price}) => {
   const uniqueDates = [...new Set(datesTimes.map(dt => dt.play_date))];
 
   const handleChange = (selectedOption) => {
-    console.log("Selected Cinema:", selectedOption)
+    setSelectedCinema(selectedOption);
+
   }
+  console.log("Selected Cinema:", selectedCinema)
   console.log("selectedDate", selectedDate);
   console.log("selectedTime", selectedTime);
 
@@ -110,7 +113,7 @@ const TicketModal = ({open, onClose, title, price}) => {
               <span className='bold'>Checout!</span>
             </button>    
             {openModal ? 
-            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} title={title} price={price * ticketAmount} selectedDate={selectedDate.split("T")[0] } selectedTime={selectedTime} ticketAmount={ticketAmount}/>: null
+            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} title={title} price={price * ticketAmount} selectedCinema={selectedCinema.label} selectedDate={selectedDate.split("T")[0] } selectedTime={selectedTime} ticketAmount={ticketAmount}/>: null
             }
             <button className='btnOutline'>
             <span className='bold' onClick={onClose}>Cancel</span>

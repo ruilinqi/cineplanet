@@ -25,7 +25,7 @@ const UserAvatar = ({ open,onClose }) => {
             <h3>Your Tickets: </h3>
             {allOrders.map((order, index) => (
             <div key={index}>
-            <p>Order {index + 1}: {order.title} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
+            <p>Order {index + 1}: {order.title} {order.selectedCinema} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
             </div>
             ))}
           </div>
