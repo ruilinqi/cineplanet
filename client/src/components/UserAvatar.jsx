@@ -26,6 +26,7 @@ const UserAvatar = ({ open,onClose }) => {
             {allOrders.map((order, index) => (
             <div key={index}>
             <p>Order {index + 1}: {order.title} {order.selectedCinema} {order.selectedDate} {order.selectedTime} {order.ticketAmount}</p>
+            <img src = {order.poster}/>
             </div>
             ))}
           </div>

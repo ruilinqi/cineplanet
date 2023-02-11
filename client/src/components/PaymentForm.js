@@ -27,7 +27,7 @@ const CARD_OPTIONS = {
 }
 
 
-export default function PaymentForm({title, price, selectedCinema, selectedDate, selectedTime, ticketAmount}) {
+export default function PaymentForm({title, price, selectedCinema, selectedDate, selectedTime, ticketAmount, poster}) {
   const { auth } = useContext(AuthContext);
   const [success, setSuccess] = useState(false)
   const stripe = useStripe()
@@ -63,13 +63,16 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
             selectedCinema: selectedCinema,
             selectedDate: selectedDate,
             selectedTime: selectedTime,
-            ticketAmount: ticketAmount
+            ticketAmount: ticketAmount,
+            poster: poster
           };
           window.localStorage.setItem("title", JSON.stringify(title))
           window.localStorage.setItem("selectedCinema", JSON.stringify(selectedCinema))
           window.localStorage.setItem("selectedDate", JSON.stringify(selectedDate))
           window.localStorage.setItem("selectedTime", JSON.stringify(selectedTime))
           window.localStorage.setItem("ticketAmount", JSON.stringify(ticketAmount))
+          window.localStorage.setItem("poster", JSON.stringify(poster))
+
           console.log("new order", newOrder);
           
           setAllOrders([...allOrders, newOrder]);
@@ -112,6 +115,7 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
           </video>
             <h2>Enjoy your movie! {auth.user_email}</h2>
             <p>Your order: {title} {selectedCinema} {selectedDate} {selectedTime} {ticketAmount}</p>
+            <img src = {poster}/>
           </div>
         </div>
       }

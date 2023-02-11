@@ -6,7 +6,7 @@ import 'bulma/css/bulma.css'
 import './Modal.css'
 import './TicketModal.css'
 
-const TicketModal = ({open, onClose, title, price}) => {
+const TicketModal = ({open, onClose, title, price, poster}) => {
   const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
 
@@ -113,7 +113,7 @@ const TicketModal = ({open, onClose, title, price}) => {
               <span className='bold'>Checout!</span>
             </button>    
             {openModal ? 
-            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} title={title} price={price * ticketAmount} selectedCinema={selectedCinema.label} selectedDate={selectedDate.split("T")[0] } selectedTime={selectedTime} ticketAmount={ticketAmount}/>: null
+            <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} title={title} price={price * ticketAmount} selectedCinema={selectedCinema.label} selectedDate={selectedDate.split("T")[0] } selectedTime={selectedTime} ticketAmount={ticketAmount} poster={poster}/>: null
             }
             <button className='btnOutline'>
             <span className='bold' onClick={onClose}>Cancel</span>

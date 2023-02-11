@@ -49,7 +49,7 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
               <span className='bold'>Buy ticket! (${films.price})</span>
             </button>
             {openModal ?
-              <TicketModal open={openModal} onClose={() => setOpenModal(false)} title={title} price={films.price} /> : null
+              <TicketModal open={openModal} onClose={() => setOpenModal(false)} title={title} price={films.price} poster={poster}/> : null
             }
             <button className='btnOutline'>
               <span className='bold' onClick={onClose}>Cancel</span>
