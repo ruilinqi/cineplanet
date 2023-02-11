@@ -35,13 +35,16 @@ const Login = () => {
 
         
         setAuth({ email, password })
-        const user_id = response?.data?.id
+        // const user_id = response?.data?.id
+        // const user_id = data.id;
+
+        // const name = data.name;
+        // window.localStorage.setItem("name", JSON.stringify(name))
         window.localStorage.setItem("password", JSON.stringify(password))
         window.localStorage.setItem("user_email", JSON.stringify(email))
         setEmail('')
         setPassword('');
-
-        window.location.href = '/';
+         window.location.href = '/';
       }
     } catch (err) {
       setError(err);
