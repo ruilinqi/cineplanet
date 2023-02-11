@@ -5,8 +5,8 @@ import AuthContext from "../providers/AuthProvider";
 import OrderContext from "../providers/ContextProvider";
 // import { Navbar, Nav, NavDropdown, Form, Button, ButtonGroup } from 'react-bootstrap'
 import './Navbar.css'
-// import Login from "./Login";
-// import Signup from "./Signup";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' 
 import UserAvatar from "./UserAvatar";
 
 const Navbar = (props) => {
@@ -22,7 +22,11 @@ const Navbar = (props) => {
         <div className="navbar">
             <div className="navbar-start">
             <div className="navbar-item">
-            <Link to="/">Home</Link>
+            <Link to="/">
+            <span className="icon is-small">
+          <FontAwesomeIcon icon={solid('film')} />
+          </span>
+            </Link>
             </div>
             </div>
             <div className="navbar-end">
@@ -44,7 +48,11 @@ const Navbar = (props) => {
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="navbar-item">
-                    <Link to="/">Home</Link>
+                    <Link to="/">
+                    <span className="icon is-small">
+                    <FontAwesomeIcon icon={solid('film')} />
+                    </span>
+                    </Link>                    
                     </div>
                 </div>
                 <div className="navbar-end">

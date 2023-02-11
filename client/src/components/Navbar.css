@@ -1,6 +1,9 @@
 .navbar {
     background-color: black;
 }
+.navbar-start {
+    padding: 10px 20pc 0 20px;
+}
 .button-yellow{
     background-color: #FFE227!important;
     color: #000!important;
@@ -9,4 +12,8 @@
 .button-white{
     background-color: rgb(255, 255, 255)!important;
     color: #000!important;
+}
+.navbar .icon {
+    font-size: 40px;
+    color: #FFE227;
 }
