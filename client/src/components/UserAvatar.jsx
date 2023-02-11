@@ -6,6 +6,7 @@ import { OrderContext } from "../providers/ContextProvider"
 const UserAvatar = ({ open,onClose }) => {
   const [openModal, setOpenModal] = useState(false);
   const { auth } = useContext(AuthContext);
+
   // const { order } = useContext(OrderContext);
   const { allOrders } = useContext(OrderContext);
 
