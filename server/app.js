@@ -15,6 +15,7 @@ const indexRouter = require('./routes/index');
  const paymentRouter = require('./routes/payment');
  const cinemaRouter = require('./routes/cinema');
 const films_cinemasRouter = require('./routes/film_cinema');
+// const userRouter = require('./routes/user');
 
 app.use(cors())
 
@@ -34,6 +35,6 @@ app.use('/films',filmsRouter)
 app.use('/payment',paymentRouter)
 app.use('/cinema',cinemaRouter)
 app.use('/film_cinema',films_cinemasRouter)
-
+// app.use('/user', userRouter)
 
 module.exports = app;
