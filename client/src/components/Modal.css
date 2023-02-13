@@ -54,11 +54,17 @@
   border: 1px solid #411b57;
 }
 
+
 .btnPrimary {
   background-color: #411b57;
   color: white;
 }
 
+.btnPrimary:hover {
+  background-color: #420466b6;
+  color:#FFF;
+  font-weight: 600;
+}
 .btnOutline {
   background-color: white;
   color: #411b57;
@@ -80,4 +86,9 @@
   position: relative;
   padding-left:20px;
   top: 2px;
+}
+
+.is-rotate {
+  transform: rotate(-30deg);
+  top: 7px;
 }

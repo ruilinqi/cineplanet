@@ -81,6 +81,8 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
             X
           </span>
           <h2 className='movieTitle'>Your moive: {title}</h2>
+          <p className='bold'>General Ticket: ${price}</p>
+
           <div className="columns is-centered">
           <div className="dropdown-column-one">
             <input type="submit" value ="Cinema" style={{height:"65px",

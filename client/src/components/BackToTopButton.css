@@ -17,3 +17,7 @@
 .gotopbutton span {
   display: inline-block;
 }
+
+.gotopbutton:hover {
+  background-color: #ffbf00d7;
+}

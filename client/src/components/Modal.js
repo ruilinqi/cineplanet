@@ -48,7 +48,7 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
           <div className='btnContainer'>
             <button className='btnPrimary' onClick={handleClick}>
               <span className='bold'>Buy ticket
-                <span className="icon is-small is-left is-padding">
+                <span className="icon is-small is-left is-padding is-rotate">
                 <FontAwesomeIcon icon={solid('ticket')} />
                 </span>
               </span>
