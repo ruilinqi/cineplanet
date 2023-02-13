@@ -16,6 +16,7 @@
 
 .gotopbutton span {
   display: inline-block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .gotopbutton:hover {
