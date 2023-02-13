@@ -8,6 +8,8 @@ import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' 
 import UserAvatar from "./UserAvatar";
+import plantetLogo from '../assets/planet-logo.png'
+
 
 const Navbar = (props) => {
     const { auth } = useContext(AuthContext);
@@ -49,10 +51,10 @@ const Navbar = (props) => {
                 <div className="navbar-start">
                     <div className="navbar-item">
                     <Link to="/">
-                    <span className="icon is-small">
-                    <FontAwesomeIcon icon={solid('film')} />
+                     <span className="icon is-small">
+                    <img src={plantetLogo}></img>
                     </span>
-                    </Link>                    
+                    </Link>                   
                     </div>
                 </div>
                 <div className="navbar-end">
