@@ -31,17 +31,30 @@ const CARD_OPTIONS = {
 }
 
 
-export default function PaymentForm({title, price, selectedCinema, selectedDate, selectedTime, ticketAmount, poster}) {
+export default function PaymentForm({title, price, selectedCinema, selectedDate, selectedTime, ticketAmount, poster, onClose}) {
   const { auth } = useContext(AuthContext);
   const [success, setSuccess] = useState(false)
   const stripe = useStripe()
   const elements = useElements();
   //  const { order, setOrder } = useContext(OrderContext);
   const { allOrders, setAllOrders } = useContext(OrderContext);
+
+  
   console.log("Moive ticket:", title);
   console.log("Cinema location:", selectedCinema);
   console.log("Moive Date:", selectedDate);
   console.log("Moive Time:", selectedTime);
+  
+  // const [openModal, setOpenModal] = useState(false)
+
+  // const handleClick = () => {
+  //   if (auth.user_email) {
+  //     setOpenModal(true)
+  //   } else {
+  //     // setShowMessage(true)
+  //     // setTimeout(() => setShowMessage(false), 5000)
+  //   }
+  // }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -134,7 +147,7 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
                 
                 <div class="item-left">
                   <p class="event">Movie</p>
-                  <h2 class="title">{title}</h2>
+                  <h2 class="title" style={{fontSize:"20px", padding:"0px 0px 0px 0px",  fontWeight:"100"}}>{title}</h2>
                   
                   <div class="sce">
                     <span className="icon is-small is-left">
@@ -159,7 +172,11 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
                 </div>
               </div>
             </div>
-            </div>
+
+          {/* <button className='closeBtn back-home-btn' onClick={()=>{setOpenModal(false); onClose()}}>
+            Back to Home
+          </button> */}
+        </div>
       }
     </>
   )

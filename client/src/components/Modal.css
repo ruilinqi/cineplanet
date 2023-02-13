@@ -75,3 +75,9 @@
 .text-info {
   bottom: 0;
 }
+
+.is-padding {
+  position: relative;
+  padding-left:20px;
+  top: 2px;
+}

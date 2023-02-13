@@ -10,6 +10,11 @@
     font-size: 40px;
     padding-top: 50px;
 }
+.centerContainer h2{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 30px;
+    padding-top: 50px;
+}
 .amount-btn {
     max-width: 5%;
 }

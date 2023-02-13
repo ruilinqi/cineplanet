@@ -98,7 +98,30 @@
 
 .topText {
 	position: fixed;
-  top: 20%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.ticketContainerAfterPay p {
+	font-family: 'Inknut Antiqua', serif;
+  font-family: 'Ravi Prakash', cursive;
+  font-family: 'Lora', serif;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Cabin', sans-serif;
+}
+
+.ticketContainerAfterPay h2{
+	font-size: 2000px;
+}
+
+.back-home-btn{
+  background-color: #411b57;
+  color: white;
+  border: 2px solid black;
+	position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	max-width: 20%;
 }

@@ -4,7 +4,8 @@ import { useState, useEffect, useContext } from 'react'
 import AuthContext from "../providers/AuthProvider";
 import StripeContainer from './StripeContainer'
 import TicketModal from './TicketModal'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' 
 const Modal = ({open,onClose,title,vote,poster,overview}) =>{
   const [openModal, setOpenModal] = useState(false)
   const [films,setFilms] = useState(null)
@@ -46,7 +47,11 @@ const Modal = ({open,onClose,title,vote,poster,overview}) =>{
           </div>
           <div className='btnContainer'>
             <button className='btnPrimary' onClick={handleClick}>
-              <span className='bold'>Buy ticket!</span>
+              <span className='bold'>Buy ticket
+                <span className="icon is-small is-left is-padding">
+                <FontAwesomeIcon icon={solid('ticket')} />
+                </span>
+              </span>
             </button>
             {openModal ?
               <TicketModal open={openModal} onClose={() => setOpenModal(false)} title={title} price={films.price} poster={poster}/> : null
