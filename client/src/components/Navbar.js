@@ -14,7 +14,7 @@ const Navbar = (props) => {
     const [openModal, setOpenModal] = useState(false)
 
     //const userAuth = window.localStorage.getItem("user_id");
-    console.log("You've logged in as:", auth.user_email);
+    console.log("You've logged in with:", auth.user_email);
     // const u_id = user.user_id;
     // if (JSON.parse(userAuth) === user.user_id) {
     if (auth.user_email === null) {
@@ -57,15 +57,19 @@ const Navbar = (props) => {
                 </div>
                 <div className="navbar-end">
                 <div className="navbar-item">
-                        <div className="">
-                        <button className="button" onClick={() => setOpenModal(true)}>Avatar</button>
+                    <div className="avatar-button">
+                        <button className="button" onClick={() => setOpenModal(true)}>
+                        <span className="icon is-small">
+                        <FontAwesomeIcon icon={solid('user')} />
+                        </span>
+                        </button>
                         <UserAvatar open={openModal} onClose={() => setOpenModal(false)} />
                         {/* <img
                         className="nav_avatar"
                         src="https://images.freeimages.com/images/large-previews/7e8/man-avatar-1632965.jpg"
                         alt="Avatar"
                         /> */}
-                        </div>
+                    </div>
                     </div>
                     <div className="navbar-item">
                         <div className="buttons">

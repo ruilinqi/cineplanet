@@ -17,3 +17,12 @@
     font-size: 40px;
     color: #FFE227;
 }
+
+.avatar-button .icon {
+    font-size: 26px;
+    color:#411b57;
+}
+
+.avatar-button .button {
+    background-color: #FFE227;
+}
