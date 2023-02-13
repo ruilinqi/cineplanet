@@ -18,6 +18,7 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
   const [ticketAmount, setTicketAmount] = useState(1);
   const [selectedCinema, setSelectedCinema] = useState(null);
 
+  const [showMessage, setShowMessage] = useState(false)
 
   //cinema
   useEffect(() => {
@@ -59,7 +60,16 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
     setTicketAmount(ticketAmount + value);
     }
     };
-
+  
+  // check selector
+  const handleClick = () => {
+    if (selectedCinema && selectedDate && selectedTime) {
+      setOpenModal(true)
+    } else {
+      setShowMessage(true)
+      setTimeout(() => setShowMessage(false), 5000)
+    }
+  }
   if(!open) {return null}
 
   return (
@@ -113,7 +123,7 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
           <p className='bold subtotal-text'>Subtotal: ${price * ticketAmount}</p>
 
           <div className='btnContainer'>
-            <button className='btnPrimary' onClick={()=>setOpenModal(true)}>
+            <button className='btnPrimary' onClick={handleClick}>
               <span className='bold'>Checkout</span>
             </button>    
             {openModal ? 
@@ -123,6 +133,8 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
             <span className='bold' onClick={onClose}>Cancel</span>
             </button>           
           </div>
+            {showMessage && <div className="message" style={{}}>Please select cinema, date and time before checkout.</div>}
+
         </div>
       </div>
     </div>
