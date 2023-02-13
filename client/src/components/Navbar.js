@@ -26,7 +26,7 @@ const Navbar = (props) => {
             <div className="navbar-item">
             <Link to="/">
             <span className="icon is-small">
-          <FontAwesomeIcon icon={solid('film')} />
+            <img class="logo" src={plantetLogo}></img>
           </span>
             </Link>
             </div>
@@ -52,7 +52,7 @@ const Navbar = (props) => {
                     <div className="navbar-item">
                     <Link to="/">
                      <span className="icon is-small">
-                    <img src={plantetLogo}></img>
+                    <img class="logo" src={plantetLogo}></img>
                     </span>
                     </Link>                   
                     </div>
@@ -62,7 +62,7 @@ const Navbar = (props) => {
                     <div className="avatar-button">
                         <button className="button" onClick={() => setOpenModal(true)}>
                         <span className="icon is-small">
-                        <FontAwesomeIcon icon={solid('user')} />
+                        <FontAwesomeIcon icon={solid('user-astronaut')} />
                         </span>
                         </button>
                         <UserAvatar open={openModal} onClose={() => setOpenModal(false)} />

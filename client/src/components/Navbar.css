@@ -26,8 +26,9 @@
 .avatar-button .button {
     background-color: #FFE227;
 }
-.icon img {
+.icon .logo {
     max-width: 400%;
     height: auto;
     padding-left:10px;
 }
+
