@@ -35,10 +35,10 @@ const Navbar = (props) => {
             <div className="navbar-item">
                 <div className="buttons">
                 <button className="button is-rounded is-primary button-yellow">
-                <Link to="/login">Login</Link>
+                <Link to="/login" className="text-black">Login</Link>
                 </button>
                 <button className="button is-rounded is-light button-white">
-                <Link to="/Signup">Register</Link>
+                <Link to="/Signup" className="text-black">Register</Link>
                 </button>
                 </div>
             </div>
@@ -76,7 +76,7 @@ const Navbar = (props) => {
                     <div className="navbar-item">
                         <div className="buttons">
                         <button className="button is-rounded is-primary button-yellow">
-                        <Link to="/logout">logout</Link>
+                        <Link to="/logout" className="text-black">logout</Link>
                         </button>
                         </div>
                     </div>

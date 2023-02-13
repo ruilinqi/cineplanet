@@ -4,6 +4,9 @@
 .navbar-start {
     padding: 10px 20pc 0 20px;
 }
+.text-black {
+    color: #000;
+}
 .button-yellow{
     background-color: #FFE227!important;
     color: #000!important;
