@@ -25,7 +25,6 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
       axios
       .get("/cinema")
       .then(res => {
-          console.log("All cinemas:", res.data);
           setCinemas(res.data)})
       .catch(err => console.log(err));
   }, []);
@@ -34,7 +33,6 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
   useEffect(()=>{
     axios.get(`http://localhost:8080/film_cinema/${title}`)
     .then( res => {
-      console.log("Films Dates and Times", res.data);
       setDatesTimes(res.data)})
     .catch(err => console.log(err));
   },[])
@@ -50,9 +48,9 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
     setSelectedCinema(selectedOption);
 
   }
-  console.log("Selected Cinema:", selectedCinema)
-  console.log("selectedDate", selectedDate);
-  console.log("selectedTime", selectedTime);
+  // console.log("Selected Cinema:", selectedCinema)
+  // console.log("selectedDate", selectedDate);
+  // console.log("selectedTime", selectedTime);
 
   // Amount of tickets cannot be nagetive
   const handleTicketChange = (value) => {

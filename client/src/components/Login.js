@@ -32,15 +32,10 @@ const Login = () => {
         setError(data.error);
       } else {
         localStorage.setItem('token', data.token);
-        console.log('setitem users', data.token) // undefined
+        // console.log('setitem users', data.token) // undefined
 
         
         setAuth({ email, password })
-        // const user_id = response?.data?.id
-        // const user_id = data.id;
-
-        // const name = data.name;
-        // window.localStorage.setItem("name", JSON.stringify(name))
         window.localStorage.setItem("password", JSON.stringify(password))
         window.localStorage.setItem("user_email", JSON.stringify(email))
         setEmail('')

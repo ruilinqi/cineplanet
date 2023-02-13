@@ -15,10 +15,7 @@ const Navbar = (props) => {
     const { auth } = useContext(AuthContext);
     const [openModal, setOpenModal] = useState(false)
 
-    //const userAuth = window.localStorage.getItem("user_id");
     console.log("You've logged in with:", auth.user_email);
-    // const u_id = user.user_id;
-    // if (JSON.parse(userAuth) === user.user_id) {
     if (auth.user_email === null) {
         return (
         <div className="navbar">
@@ -26,7 +23,7 @@ const Navbar = (props) => {
             <div className="navbar-item">
             <Link to="/">
             <span className="icon is-small">
-            <img class="logo" src={plantetLogo}></img>
+            <img className="logo" src={plantetLogo}></img>
           </span>
             </Link>
             </div>
@@ -52,7 +49,7 @@ const Navbar = (props) => {
                     <div className="navbar-item">
                     <Link to="/">
                      <span className="icon is-small">
-                    <img class="logo" src={plantetLogo}></img>
+                    <img className="logo" src={plantetLogo}></img>
                     </span>
                     </Link>                   
                     </div>

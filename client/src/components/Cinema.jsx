@@ -7,7 +7,7 @@ const Cinema = () => {
         axios
         .get("/cinema")
         .then(res => {
-            console.log("res.data", res.data)
+            // console.log("res.data", res.data)
             setCinemas(res.data)})
 
         .catch(err => console.log(err));

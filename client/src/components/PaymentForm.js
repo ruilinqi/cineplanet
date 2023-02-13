@@ -40,21 +40,10 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
   const { allOrders, setAllOrders } = useContext(OrderContext);
 
   
-  console.log("Moive ticket:", title);
-  console.log("Cinema location:", selectedCinema);
-  console.log("Moive Date:", selectedDate);
-  console.log("Moive Time:", selectedTime);
-  
-  // const [openModal, setOpenModal] = useState(false)
-
-  // const handleClick = () => {
-  //   if (auth.user_email) {
-  //     setOpenModal(true)
-  //   } else {
-  //     // setShowMessage(true)
-  //     // setTimeout(() => setShowMessage(false), 5000)
-  //   }
-  // }
+  // console.log("Moive ticket:", title);
+  // console.log("Cinema location:", selectedCinema);
+  // console.log("Moive Date:", selectedDate);
+  // console.log("Moive Time:", selectedTime);
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -94,8 +83,7 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
           
           setAllOrders([...allOrders, newOrder]);
           window.localStorage.setItem("allOrders", JSON.stringify(allOrders))
-
-          console.log("all orders", allOrders);
+          // console.log("all orders", allOrders);
         }
       } catch (error) {
         console.log('Error==>', error)
@@ -136,21 +124,19 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
           </div>
         </div>
         <div>
-            <div class="container ticketContainerAfterPay">
-              <div class="item columns is-centered transparent-background">
-                <div class="item-right">
-                  {/* <h2 class="num">23</h2>
-                  <p class="day">Feb</p> */}
+            <div className="container ticketContainerAfterPay">
+              <div className="item columns is-centered transparent-background">
+                <div className="item-right">
                   <img src = {poster}/>
-                  <span class="up-border"></span>
-                  <span class="down-border"></span>
+                  <span className="up-border"></span>
+                  <span className="down-border"></span>
                 </div>
                 
-                <div class="item-left">
-                  <p class="event">Movie</p>
-                  <h2 class="title" style={{fontSize:"20px", padding:"0px 0px 0px 0px",  fontWeight:"100"}}>{title}</h2>
+                <div className="item-left">
+                  <p className="event">Movie</p>
+                  <h2 className="title" style={{fontSize:"20px", padding:"0px 0px 0px 0px",  fontWeight:"100"}}>{title}</h2>
                   
-                  <div class="sce">
+                  <div className="sce">
                     <span className="icon is-small is-left">
                     <FontAwesomeIcon icon={solid('calendar-days')} />
                     </span>
@@ -161,13 +147,13 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
                     </span>
                     <p>{selectedTime}</p>
                   </div>
-                  <div class="loc">
+                  <div className="loc">
                     <span className="icon is-small is-left">
                     <FontAwesomeIcon icon={solid('location-dot')} />
                     </span>
                     <p>{selectedCinema} </p>
                   </div>
-                  <div class="tickets">
+                  <div className="tickets">
                     <p>Tickets X {ticketAmount}</p>
                   </div>
                 </div>
