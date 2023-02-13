@@ -21,7 +21,37 @@ div .user-form {
     justify-content: center;
     flex-direction: column;
     padding: 100px;
-   margin-right: 300px;
+   /* margin-right: 300px; */
    border: 2px solid black;
    border-radius: 5em;
+}
+
+.login-register-text-container{
+    padding-top: 20px;
+}
+.account-message{
+    color: #fff;
+    padding: 10px 0;
+}
+.login-register-text {
+    color: #FFE227!important;
+}
+.arrow-white{
+    color: #fff;
+}
+
+.arrow-left {
+    float: left;
+    margin-right: 10px;
+}
+.text-left{
+    float: left;
+}
+
+.arrow-right {
+    float: right;
+    margin-left: 10px;
+}
+.text-right{
+    float: right;
 }

@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 // import { useNavigate } from "react-router-dom";
 import AuthContext from "../providers/AuthProvider";
 import 'bulma/css/bulma.css'
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import './Login.css'
@@ -54,45 +55,64 @@ const Login = () => {
     <div className="columns is-centered user-form">
       <div className="column is-three-fifths is-offset-one-fifth">
       <h2>Login</h2>
-    <form onSubmit={handleSubmit} className = "login-page">
-      <div className="field">
-        <p className="control has-icons-left">
-          <input
-          className="text-input-padding"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <span className="icon is-small is-left">
-          {/* <i className="fas fa-envelope"></i> */}
-          <FontAwesomeIcon icon={solid('envelope')} />
-          </span>
-        </p>
-      </div>
-      <div className="field">
-        <p className="control has-icons-left">
-          <input
-          className="text-input-padding"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />    
-          <span className="icon is-small is-left">
-          <FontAwesomeIcon icon={solid('lock')} />
-          </span>
-        </p>
-      </div>
-      <div className="field">
-        <p className="control">
-          <button type="submit" className="button is-rounded is-primary button-yellow">Login</button>
-          {error && <p>{error}</p>}
-        </p>
-      </div>      
-    </form>
+        <form onSubmit={handleSubmit} className = "login-page">
+          <div className="field">
+            <p className="control has-icons-left">
+              <input
+              className="text-input-padding"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <span className="icon is-small is-left">
+              {/* <i className="fas fa-envelope"></i> */}
+              <FontAwesomeIcon icon={solid('envelope')} />
+              </span>
+            </p>
+          </div>
+          <div className="field">
+            <p className="control has-icons-left">
+              <input
+              className="text-input-padding"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />    
+              <span className="icon is-small is-left">
+              <FontAwesomeIcon icon={solid('lock')} />
+              </span>
+            </p>
+          </div>
+          <div className="field">
+            <p className="control">
+              <button type="submit" className="button is-rounded is-primary button-yellow">Login</button>
+              {error && <p>{error}</p>}
+            </p>
+          </div>      
+        </form>
+        <div className="columns login-register-text-container">
+          <div className="column is-6">
+            <span className="icon is-small arrow-white arrow-left">
+              <FontAwesomeIcon icon={solid('arrow-left-long')} />
+            </span><br/>
+            <p className="account-message text-left">Back to 
+            <Link to="/" className='login-register-text'> Home</Link>
+            </p>
+          </div>
+          <div className="column is-6">
+            <span className="icon is-small arrow-white arrow-right">
+              <FontAwesomeIcon icon={solid('arrow-right-long')} />
+            </span><br/>
+            <p className="account-message text-right">Don't have an account yet? Create one now: 
+            <Link to="/Signup" className='login-register-text'> Register</Link>
+            </p>
+          </div>
+        </div>
+        
     </div>
     </div>
   );

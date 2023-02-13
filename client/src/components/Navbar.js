@@ -38,7 +38,7 @@ const Navbar = (props) => {
                 <Link to="/login">Login</Link>
                 </button>
                 <button className="button is-rounded is-light button-white">
-                <Link to="/Signup">Signup</Link>
+                <Link to="/Signup">Register</Link>
                 </button>
                 </div>
             </div>
