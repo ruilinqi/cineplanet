@@ -114,7 +114,7 @@ const TicketModal = ({open, onClose, title, price, poster}) => {
 
           <div className='btnContainer'>
             <button className='btnPrimary' onClick={()=>setOpenModal(true)}>
-              <span className='bold'>Checout!</span>
+              <span className='bold'>Checkout!</span>
             </button>    
             {openModal ? 
             <StripeContainer open = {openModal} onClose={() => setOpenModal(false)} title={title} price={price * ticketAmount} selectedCinema={selectedCinema.label} selectedDate={selectedDate.split("T")[0] } selectedTime={selectedTime} ticketAmount={ticketAmount} poster={poster}/>: null
