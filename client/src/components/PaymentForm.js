@@ -113,16 +113,17 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
             <source src={cinima} type="video/mp4"></source>
           </video>
           <br/>
-          <h2>Welcome to cineplanet!</h2>
-          <h2>{auth.user_email}</h2>
+          <h2>Checkout</h2>
+          {/* <h2>Sign in as: {auth.user_email}</h2> */}
           <br/>
-          <form onSubmit={handleSubmit} className='paymentForm'>
+          <form onSubmit={handleSubmit} className='paymentForm' style={{paddingTop:"100px"}}>
             <fieldset className="FormGroup">
               <div className="FormRow">
                 <CardElement options={CARD_OPTIONS} />
               </div>
             </fieldset>
             <button id ="payButton">Pay</button>
+          <h2 style={{fontSize:"20px", fontWeight:"100", paddingTop:"200px"}}>Sign in as: {auth.user_email}</h2>
           </form>
         </div>
         : <div>
@@ -131,10 +132,10 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
           <video autoPlay loop muted playsInline className="back-video">
             <source src={cinima} type="video/mp4"></source>
           </video>
-            <h2 className="topText">Enjoy your movie! {auth.user_email}</h2>
+            <h2 className="topText">Enjoy your movie!</h2>
           </div>
         </div>
-
+        <div>
             <div class="container ticketContainerAfterPay">
               <div class="item columns is-centered transparent-background">
                 <div class="item-right">
@@ -171,8 +172,9 @@ export default function PaymentForm({title, price, selectedCinema, selectedDate,
                   </div>
                 </div>
               </div>
+            <h2 style={{fontSize:"20px", fontWeight:"100", paddingTop:"400px", color:"#FFF"}}>Sign in as: {auth.user_email}</h2>
             </div>
-
+            </div>
           {/* <button className='closeBtn back-home-btn' onClick={()=>{setOpenModal(false); onClose()}}>
             Back to Home
           </button> */}
