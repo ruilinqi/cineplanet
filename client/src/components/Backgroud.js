@@ -11,7 +11,7 @@ const Backgroud = () => {
       <video src={space} autoPlay loop muted />
       <div className='introContent'>
           <h3>Welcome</h3>
-          <h3>To <b style={{fontFamily:"fantasy"}}>CinePlanet</b></h3>
+          <h3>To <b>CinePlanet</b></h3>
       </div>
   </div>
     )
