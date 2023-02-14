@@ -31,3 +31,9 @@ video {
   padding: 15px 70px;
   margin-top: 40px;
 }
+
+.introContent h3 b {
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
