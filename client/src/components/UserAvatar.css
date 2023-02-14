@@ -1,9 +1,9 @@
 .avatarModalContainer {
   max-width: 600px;
-  height: 650px; 
+  height: 500px;
   width: 100%;
   position: fixed;
-  top: 45%;
+  top: 35%;
   /* left: 80%; */
   right: 0%;
   transform: translateY(-50%);
