@@ -164,3 +164,17 @@ INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (10, '2023-02-2
 INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (10, '2023-02-22', '12:30');
 INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (10, '2023-02-22', '14:00');
 INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (10, '2023-02-22', '18:00');
+
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-18', '10:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-18', '14:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-18', '18:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-19', '10:30');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-19', '16:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-19', '20:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-21', '11:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-21', '15:30');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-21', '18:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-22', '10:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-22', '12:30');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-22', '14:00');
+INSERT INTO films_cinemas (film_id, play_date, play_time) VALUES (12, '2023-02-22', '18:00');
