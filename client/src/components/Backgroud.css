@@ -15,9 +15,10 @@ video {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   color: white;
   font-size: 100px;
+  padding-left: 30%;
 }
 
 .introContent button {
