@@ -19,5 +19,5 @@ Cineplanet is a website that offers users the ability to browse a diverse select
 5. Go to `http://localhost:8080/cinema/fetch` to fetch cinema locations's data
 6. Run:
 - On \server run `npm run dev`
-- On \client `run npm start`
+- On \client run `npm start`
 7. Enjoy the app in the `http://localhost:3000/`
