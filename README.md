@@ -1,5 +1,6 @@
 # CinePlanet
 Cineplanet is a website that offers users the ability to browse a diverse selection of high-rated and classic movies and purchase movie tickets. The website features a range of movie details, including overviews, ratings, and trailers, to help users make informed decisions about which movie to see. Additionally, Cineplanet provides information on cinemas in Toronto, as well as showtimes for each movie, giving users the flexibility to choose the most convenient time and location.
+
 Cineplanet is contributed by @ChunyuBai and @ruilinqi.
 ## Features
 - Browse movie listings and flip movie cards to view movies' titles, ratings
