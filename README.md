@@ -15,38 +15,38 @@ CinePlanet is contributed by [@ChunyuBai](https://github.com/ChunyuBai) and [@ru
 ## Final Product
 ### Homepage
 Movie Slider on Home Page
-!["Screenshot of Movie Slider on Home Page"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_sliders.PNG)
+!["Screenshot of Movie Slider on Home Page"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_movie_list.PNG)
 
 Movie List on Home Page
-!["Screenshot of Movie List on Home Page"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_list.PNG)
+!["Screenshot of Movie List on Home Page"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_movie_list.PNG)
 
 ### Single Movie Card
 Single Movie Card Before flip
-!["Screenshot of Single Movie Card Before flip"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_card_before_flip.PNG)
+!["Screenshot of Single Movie Card Before flip"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_movie_card_before_flip.PNG)
 
 Single Movie Card After flip
-!["Screenshot of Single Movie Card After flip"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_card_after_flip.PNG)
+!["Screenshot of Single Movie Card After flip"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_movie_card_after_flip.PNG)
 
 ### Pop-up Module
 Upon clicking the "More Details" button on each individual movie card, multiple popup windows will sequentially appear, allowing the user to view movie's details, select a cinema location and time, make a payment, and confirm their transaction with a successful window.
 
 Movie Details Window
-!["Screenshot of Movie Dedtails window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_details_window.PNG)
+!["Screenshot of Movie Dedtails window"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_movie_details_window.PNG)
 
 Select Cinema Location, Date and Time Window
-!["Screenshot of Select Cinema Location, Date and Time Window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_buy_tickets.PNG)
+!["Screenshot of Select Cinema Location, Date and Time Window"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_buy_tickets.PNG)
 
 Payment Window
-!["Screenshot of Payment window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_payment.PNG)
+!["Screenshot of Payment window"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_payment.PNG)
 
 Successful transaction Window
-!["Screenshot of Successful transaction Window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_purchased_tickets.PNG)
+!["Screenshot of Successful transaction Window"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_purchased_tickets.PNG)
 
 ### Purchased Tickets View
 Users can view their purchased tickets by clicking on their user avatar after completing their purchase.
 
 Purchased Tickets View
-!["Screenshot of Tickets View"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_user's_tickets_view.PNG)
+!["Screenshot of Tickets View"](https://github.com/ruilinqi/cineplanet/blob/main/docs/cineplanet_user's_tickets_view.PNG)
 
 ## Getting Started
 1. Clone the repository
