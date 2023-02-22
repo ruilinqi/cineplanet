@@ -11,6 +11,38 @@ Cineplanet is a website that offers users the ability to browse a diverse select
 - View purchased tickets after payment
 - View multiple purchased tickets in the user's order list
 
+## Final Product
+### Homepage
+Movie Slider on Home Page
+!["Screenshot of Movie Slider on Home Page"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_sliders.PNG)
+
+Movie List on Home Page
+!["Screenshot of Movie List on Home Page"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_list.PNG)
+
+### Single Movie Card
+Single Movie Card Before flip
+!["Screenshot of Single Movie Card Before flip"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_card_before_flip.PNG)
+
+Single Movie Card After flip
+!["Screenshot of Single Movie Card After flip"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_card_after_flip.PNG)
+
+### Pop-up Module
+Movie Dedtails Window
+!["Screenshot of Movie Dedtails window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_details_window.PNG)
+
+Buy Tickets Window
+!["Screenshot of Buy Tickets window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_buy_tickets.PNG)
+
+Payment Window
+!["Screenshot of Payment window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_payment.PNG)
+
+Purchased Tickets Window
+!["Screenshot of Purchased Tickets window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_purchased_tickets.PNG)
+
+### Purchased Tickets View
+Purchased Tickets View of User
+!["Screenshot of Tickets View"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_user's_tickets_view.PNG)
+
 ## Getting Started
 1. Clone the repository
 2. Run `npm i` in both \server and \client folders to install dependencies
