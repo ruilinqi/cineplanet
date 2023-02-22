@@ -27,20 +27,24 @@ Single Movie Card After flip
 !["Screenshot of Single Movie Card After flip"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_card_after_flip.PNG)
 
 ### Pop-up Module
-Movie Dedtails Window
+Upon clicking the "More Details" button on each individual movie card, multiple popup windows will sequentially appear, allowing the user to view movie's details, select a cinema location and time, make a payment, and confirm their transaction with a successful window.
+
+Movie Details Window
 !["Screenshot of Movie Dedtails window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_movie_details_window.PNG)
 
-Buy Tickets Window
-!["Screenshot of Buy Tickets window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_buy_tickets.PNG)
+Select Cinema Location, Date and Time Window
+!["Screenshot of Select Cinema Location, Date and Time Window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_buy_tickets.PNG)
 
 Payment Window
 !["Screenshot of Payment window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_payment.PNG)
 
-Purchased Tickets Window
-!["Screenshot of Purchased Tickets window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_purchased_tickets.PNG)
+Successful transaction Window
+!["Screenshot of Successful transaction Window"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_purchased_tickets.PNG)
 
 ### Purchased Tickets View
-Purchased Tickets View of User
+Users can view their purchased tickets by clicking on their user avatar after completing their purchase.
+
+Purchased Tickets View
 !["Screenshot of Tickets View"](https://github.com/ChunyuBai/cineplanet/blob/main/docs/cineplanet_user's_tickets_view.PNG)
 
 ## Getting Started
